@@ -15,6 +15,7 @@ The infrastructure is deployed in **AWS Region: eu-west-1 (Ireland)** across **t
 - **RDS Database (MySQL & Read Replica)** in isolated private subnets  
 - A combination of **public and private subnets**  
 - **Routing, security groups, and NAT Gateway** to manage traffic and control access
+- **Auto Scaling Group** manages the two EC2 instances (one per AZ) to ensure availability, distribute load, and recover from instance failure.
 
 ---
 
@@ -40,6 +41,8 @@ The infrastructure is deployed in **AWS Region: eu-west-1 (Ireland)** across **t
 | **Systems Manager** | Helps manage instances using Session Manager (alternative to SSH), Patch Manager, and Parameter Store. |
 | **Certificate Manager** | Issues and manages SSL/TLS certificates for HTTPS access via the Load Balancer. |
 | **Security Hub & GuardDuty** | Detects security threats and provides a centralized view of security posture across the account. |
+| **Auto Scaling Group	** | Automatically launches and manages EC2 instances across multiple Availability Zones. Ensures that the desired number of instances is always running. Helps handle variable traffic loads by scaling out/in based on demand. Works with the Load Balancer to distribute traffic evenly. |
+
 
 ---
 
@@ -49,6 +52,10 @@ The infrastructure is deployed in **AWS Region: eu-west-1 (Ireland)** across **t
 - **Fine-grained SG rules** and subnet isolation for better access control  
 - **WAF protection**, **CloudTrail auditing**, and **Config compliance tracking** implemented  
 - **Encrypted traffic** using ACM-issued certificates with ALB + HTTPS
+- **EC2 instances launched via Auto Scaling** Group inherit secure networking configurations and SG rules
+- **Ensures resilience and fault tolerance** by automatically replacing unhealthy instances
+
+
 
 ---
 
@@ -59,9 +66,7 @@ The infrastructure is deployed in **AWS Region: eu-west-1 (Ireland)** across **t
 ---
 
 ## 📎 Future Enhancements
-
-- Auto Scaling Groups for the App layer  
-- S3 + CloudFront for hosting a static frontend  
+  
 - Multi-AZ RDS with automatic failover  
 - CI/CD pipeline integration
 
