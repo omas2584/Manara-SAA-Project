@@ -1,8 +1,8 @@
-# 🏗️ AWS 2-Tier Architecture for Hosting a Scalable Web Application
+# 🏗️ AWS 3-Tier Architecture for Hosting a Scalable Web Application
 
 ![AWS Architecture Diagram](./architecture.png)
 
-This project demonstrates a **secure, scalable, and highly available 2-tier AWS infrastructure** to host a typical web application. The architecture separates the web, application, and database layers, and leverages various AWS services to meet production-grade performance, security, and reliability requirements.
+This project demonstrates a **secure, scalable, and highly available 3-tier AWS infrastructure** to host a typical web application. The architecture separates the web, application, and database layers, and leverages various AWS services to meet production-grade performance, security, and reliability requirements.
 
 ---
 
